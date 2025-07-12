@@ -1,0 +1,53 @@
+---
+layout: default
+title: ホーム
+---
+
+<div class="home">
+    <section class="hero">
+        <h1>yasumi 模擬店MTG議事録</h1>
+        <p>yasumi模擬店の会議議事録を共有するサイトです。</p>
+        <p>最新の会議内容や決定事項を確認できます。</p>
+    </section>
+
+    <section class="latest-meetings">
+        <h2>最新の議事録</h2>
+        {% assign sorted_meetings = site.meetings | sort: 'date' | reverse %}
+        {% if sorted_meetings.size > 0 %}
+        <div class="meetings-grid">
+            {% for meeting in sorted_meetings limit:5 %}
+            <article class="meeting-card">
+                <h3><a href="{{ meeting.url | relative_url }}">{{ meeting.title }}</a></h3>
+                {% if meeting.date %}
+                <time datetime="{{ meeting.date | date_to_xmlschema }}">
+                    {{ meeting.date | date: "%Y年%m月%d日" }}
+                </time>
+                {% endif %}
+                {% if meeting.excerpt %}
+                <p>{{ meeting.excerpt | strip_html | truncate: 100 }}</p>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div>
+        <div class="view-all">
+            <a href="{{ '/meetings/' | relative_url }}" class="btn">すべての議事録を見る</a>
+        </div>
+        {% else %}
+        <p>まだ議事録がありません。</p>
+        {% endif %}
+    </section>
+
+    <section class="quick-links">
+        <h2>クイックリンク</h2>
+        <div class="links-grid">
+            <a href="{{ '/meetings/' | relative_url }}" class="link-card">
+                <h3>議事録一覧</h3>
+                <p>すべての議事録を時系列で確認</p>
+            </a>
+            <a href="https://github.com/yasumi/yasumi.github.io" class="link-card">
+                <h3>GitHub</h3>
+                <p>リポジトリで議事録を管理</p>
+            </a>
+        </div>
+    </section>
+</div> 

@@ -1,0 +1,54 @@
+---
+layout: default
+title: 議事録一覧
+---
+
+<div class="meetings-list">
+    <header class="page-header">
+        <h1>議事録一覧</h1>
+        <p>yasumi模擬店のすべての会議議事録です。</p>
+    </header>
+
+    {% assign sorted_meetings = site.meetings | sort: 'date' | reverse %}
+    {% if sorted_meetings.size > 0 %}
+    <div class="meetings-container">
+        {% for meeting in sorted_meetings %}
+        <article class="meeting-item">
+            <header class="meeting-item-header">
+                <h2><a href="{{ meeting.url | relative_url }}">{{ meeting.title }}</a></h2>
+                <div class="meeting-item-meta">
+                    {% if meeting.date %}
+                    <time datetime="{{ meeting.date | date_to_xmlschema }}" class="meeting-date">
+                        {{ meeting.date | date: "%Y年%m月%d日" }}
+                    </time>
+                    {% endif %}
+                    {% if meeting.participants %}
+                    <span class="meeting-participants">
+                        参加者: {{ meeting.participants | join: ", " }}
+                    </span>
+                    {% endif %}
+                    {% if meeting.location %}
+                    <span class="meeting-location">
+                        場所: {{ meeting.location }}
+                    </span>
+                    {% endif %}
+                </div>
+            </header>
+            {% if meeting.excerpt %}
+            <div class="meeting-excerpt">
+                {{ meeting.excerpt | strip_html | truncate: 200 }}
+            </div>
+            {% endif %}
+            <footer class="meeting-item-footer">
+                <a href="{{ meeting.url | relative_url }}" class="read-more">詳細を見る →</a>
+            </footer>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-meetings">
+        <p>まだ議事録がありません。</p>
+        <p>新しい議事録を追加してください。</p>
+    </div>
+    {% endif %}
+</div> 

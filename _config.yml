@@ -1,0 +1,62 @@
+# Site settings
+title: "yasumi - 模擬店MTG議事録"
+description: "yasumi模擬店の会議議事録を共有するサイトです"
+author: "mayumiPc"
+email: "mayumiobara089@gmail.com"
+
+# URL settings
+url: "https://yasumi.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+
+# Jekyll settings
+encoding: utf-8
+safe: true
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Collections
+collections:
+  meetings:
+    output: true
+    permalink: /meetings/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "meetings"
+    values:
+      layout: "meeting"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# GitHub Pages settings
+github:
+  is_project_page: false
+
+# Jekyll settings
+theme: jekyll-theme-cayman 

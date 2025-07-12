@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="meeting">
+    <header class="meeting-header">
+        <h1 class="meeting-title">{{ page.title }}</h1>
+        <div class="meeting-meta">
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}" class="meeting-date">
+                開催日: {{ page.date | date: "%Y年%m月%d日" }}
+            </time>
+            {% endif %}
+            {% if page.participants %}
+            <div class="meeting-participants">
+                参加者: {{ page.participants | join: ", " }}
+            </div>
+            {% endif %}
+            {% if page.location %}
+            <div class="meeting-location">
+                場所: {{ page.location }}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    <div class="meeting-content">
+        {{ content }}
+    </div>
+
+    <footer class="meeting-footer">
+        <a href="{{ '/meetings/' | relative_url }}" class="back-to-meetings">← 議事録一覧に戻る</a>
+    </footer>
+</article> 
