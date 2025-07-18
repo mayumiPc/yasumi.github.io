@@ -1,12 +1,12 @@
----
+﻿---
 layout: default
-title: 議事録一覧
+title: 隴ｰ莠矩鹸荳隕ｧ
 ---
 
 <div class="meetings-list">
     <header class="page-header">
-        <h1>議事録一覧</h1>
-        <p>yasumi模擬店のすべての会議議事録です。</p>
+        <h1>隴ｰ莠矩鹸荳隕ｧ</h1>
+        <p>yasumi讓｡謫ｬ蠎励・縺吶∋縺ｦ縺ｮ莨夊ｭｰ隴ｰ莠矩鹸縺ｧ縺吶・/p>
     </header>
 
     {% assign sorted_meetings = site.meetings | sort: 'date' | reverse %}
@@ -19,17 +19,17 @@ title: 議事録一覧
                 <div class="meeting-item-meta">
                     {% if meeting.date %}
                     <time datetime="{{ meeting.date | date_to_xmlschema }}" class="meeting-date">
-                        {{ meeting.date | date: "%Y年%m月%d日" }}
+                        {{ meeting.date | date: "%Y蟷ｴ%m譛・d譌･" }}
                     </time>
                     {% endif %}
                     {% if meeting.participants %}
                     <span class="meeting-participants">
-                        参加者: {{ meeting.participants | join: ", " }}
+                        蜿ょ刈閠・ {{ meeting.participants | join: ", " }}
                     </span>
                     {% endif %}
                     {% if meeting.location %}
                     <span class="meeting-location">
-                        場所: {{ meeting.location }}
+                        蝣ｴ謇: {{ meeting.location }}
                     </span>
                     {% endif %}
                 </div>
@@ -40,15 +40,15 @@ title: 議事録一覧
             </div>
             {% endif %}
             <footer class="meeting-item-footer">
-                <a href="{{ meeting.url | relative_url }}" class="read-more">詳細を見る →</a>
+                <a href="{{ meeting.url | relative_url }}" class="read-more">隧ｳ邏ｰ繧定ｦ九ｋ 竊・/a>
             </footer>
         </article>
         {% endfor %}
     </div>
     {% else %}
     <div class="no-meetings">
-        <p>まだ議事録がありません。</p>
-        <p>新しい議事録を追加してください。</p>
+        <p>縺ｾ縺隴ｰ莠矩鹸縺後≠繧翫∪縺帙ｓ縲・/p>
+        <p>譁ｰ縺励＞隴ｰ莠矩鹸繧定ｿｽ蜉縺励※縺上□縺輔＞縲・/p>
     </div>
     {% endif %}
 </div> 

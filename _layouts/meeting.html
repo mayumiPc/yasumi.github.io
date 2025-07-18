@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 ---
 
@@ -8,17 +8,17 @@ layout: default
         <div class="meeting-meta">
             {% if page.date %}
             <time datetime="{{ page.date | date_to_xmlschema }}" class="meeting-date">
-                開催日: {{ page.date | date: "%Y年%m月%d日" }}
+                髢句ぎ譌･: {{ page.date | date: "%Y蟷ｴ%m譛・d譌･" }}
             </time>
             {% endif %}
             {% if page.participants %}
             <div class="meeting-participants">
-                参加者: {{ page.participants | join: ", " }}
+                蜿ょ刈閠・ {{ page.participants | join: ", " }}
             </div>
             {% endif %}
             {% if page.location %}
             <div class="meeting-location">
-                場所: {{ page.location }}
+                蝣ｴ謇: {{ page.location }}
             </div>
             {% endif %}
         </div>
@@ -29,6 +29,6 @@ layout: default
     </div>
 
     <footer class="meeting-footer">
-        <a href="{{ '/meetings/' | relative_url }}" class="back-to-meetings">← 議事録一覧に戻る</a>
+        <a href="{{ '/meetings/' | relative_url }}" class="back-to-meetings">竊・隴ｰ莠矩鹸荳隕ｧ縺ｫ謌ｻ繧・/a>
     </footer>
 </article> 

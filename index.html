@@ -1,17 +1,17 @@
----
+﻿---
 layout: default
-title: ホーム
+title: 繝帙・繝
 ---
 
 <div class="home">
     <section class="hero">
-        <h1>yasumi 模擬店MTG議事録</h1>
-        <p>yasumi模擬店の会議議事録を共有するサイトです。</p>
-        <p>最新の会議内容や決定事項を確認できます。</p>
+        <h1>yasumi 讓｡謫ｬ蠎柚TG隴ｰ莠矩鹸</h1>
+        <p>yasumi讓｡謫ｬ蠎励・莨夊ｭｰ隴ｰ莠矩鹸繧貞・譛峨☆繧九し繧､繝医〒縺吶・/p>
+        <p>譛譁ｰ縺ｮ莨夊ｭｰ蜀・ｮｹ繧・ｱｺ螳壻ｺ矩・ｒ遒ｺ隱阪〒縺阪∪縺吶・/p>
     </section>
 
     <section class="latest-meetings">
-        <h2>最新の議事録</h2>
+        <h2>譛譁ｰ縺ｮ隴ｰ莠矩鹸</h2>
         {% assign sorted_meetings = site.meetings | sort: 'date' | reverse %}
         {% if sorted_meetings.size > 0 %}
         <div class="meetings-grid">
@@ -20,7 +20,7 @@ title: ホーム
                 <h3><a href="{{ meeting.url | relative_url }}">{{ meeting.title }}</a></h3>
                 {% if meeting.date %}
                 <time datetime="{{ meeting.date | date_to_xmlschema }}">
-                    {{ meeting.date | date: "%Y年%m月%d日" }}
+                    {{ meeting.date | date: "%Y蟷ｴ%m譛・d譌･" }}
                 </time>
                 {% endif %}
                 {% if meeting.excerpt %}
@@ -30,23 +30,23 @@ title: ホーム
             {% endfor %}
         </div>
         <div class="view-all">
-            <a href="{{ '/meetings/' | relative_url }}" class="btn">すべての議事録を見る</a>
+            <a href="{{ '/meetings/' | relative_url }}" class="btn">縺吶∋縺ｦ縺ｮ隴ｰ莠矩鹸繧定ｦ九ｋ</a>
         </div>
         {% else %}
-        <p>まだ議事録がありません。</p>
+        <p>縺ｾ縺隴ｰ莠矩鹸縺後≠繧翫∪縺帙ｓ縲・/p>
         {% endif %}
     </section>
 
     <section class="quick-links">
-        <h2>クイックリンク</h2>
+        <h2>繧ｯ繧､繝・け繝ｪ繝ｳ繧ｯ</h2>
         <div class="links-grid">
             <a href="{{ '/meetings/' | relative_url }}" class="link-card">
-                <h3>議事録一覧</h3>
-                <p>すべての議事録を時系列で確認</p>
+                <h3>隴ｰ莠矩鹸荳隕ｧ</h3>
+                <p>縺吶∋縺ｦ縺ｮ隴ｰ莠矩鹸繧呈凾邉ｻ蛻励〒遒ｺ隱・/p>
             </a>
             <a href="https://github.com/yasumi/yasumi.github.io" class="link-card">
                 <h3>GitHub</h3>
-                <p>リポジトリで議事録を管理</p>
+                <p>繝ｪ繝昴ず繝医Μ縺ｧ隴ｰ莠矩鹸繧堤ｮ｡逅・/p>
             </a>
         </div>
     </section>
